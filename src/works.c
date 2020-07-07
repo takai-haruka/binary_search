@@ -12,11 +12,11 @@ int A[100000];
 int p(unsigned int x){
   int i = 0;
   int j = 0; /* 仕事を割り当てた人数 */
-  int B[k];  /* 割り当てられた仕事量 */
+  int y;  /* 割り当てられた仕事量 */
   while (j < k){  
-    B[j] = 0;
-    while (B[j] + A[i] <= x && i < n){
-      B[j] = B[j] + A[i];
+    y = 0;
+    while (y + A[i] <= x && i < n){
+      y = y + A[i];
       i++;
     }
     j++;
@@ -33,7 +33,7 @@ int main(){
   }
 
   lb = 0;
-  ub = 1e4;
+  ub = 1e9;
   while(ub - lb > 1){
     int mid = (lb + ub) / 2;
     if(p(mid)) ub = mid;
